@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  minutes: 1
+  datetime: 2018-09-21 19:20:57
+  user_id: 1
+
+two:
+  minutes: 1
+  datetime: 2018-09-21 19:20:57
+  user_id: 1
