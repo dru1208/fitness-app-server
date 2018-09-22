@@ -4,5 +4,17 @@ Rails.application.routes.draw do
 
 
   ### do routes for each thing
+  devise_for  :users,
+              path: '',
+              path_names: {
+                sign_in: '/login',
+                sign_out: '/logout',
+                registration: '/register'
+              },
+              controllers: {
+                sessions: 'sessions',
+                registrations: 'registrations'
+              },
+              defaults: { format: :json }
 
 end
