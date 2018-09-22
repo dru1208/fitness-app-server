@@ -176,3 +176,70 @@ goal5 = FitnessGoal.create!({
   datetime: "October 5, 2018 5:00 AM",
   user_id: 1
 })
+
+puts "Generating some exercise session recording..."
+
+session1 = ExerciseSession.create!({
+  datetime: "September 30, 2018 5:00 AM",
+  minutes: 120,
+  user_id: 1
+})
+
+session2 = ExerciseSession.create!({
+  datetime: "October 1, 2018 5:00 AM",
+  minutes: 60,
+  user_id: 1
+})
+
+session3 = ExerciseSession.create!({
+  datetime: "October 2, 2018 5:00 AM",
+  minutes: 0,
+  user_id: 1
+})
+
+session3 = ExerciseSession.create!({
+  datetime: "October 3, 2018 5:00 AM",
+  minutes: 45,
+  user_id: 1
+})
+
+session4 = ExerciseSession.create!({
+  datetime: "October 4, 2018 5:00 AM",
+  minutes: 180,
+  user_id: 1
+})
+
+puts "Generating some user nutrition..."
+
+usernutrition1 = UserNutrition.create!({
+  calories: 1000,
+  protein: 80,
+  fat: 20,
+  carbohydrates: 100,
+  sugar: 20
+})
+
+usernutrition2 = UserNutrition.create!({
+  calories: 2300,
+  protein: 100,
+  fat: 35,
+  carbohydrates: 120,
+  sugar: 0
+})
+
+usernutrition3 = UserNutrition.create!({
+  calories: 3000,
+  protein: 200,
+  fat: 20,
+  carbohydrates: 200,
+  sugar: 10
+})
+
+usernutrition4 = UserNutrition.create!({
+  calories: 4000,
+  protein: 200,
+  fat: 10,
+  carbohydrates: 20,
+  sugar: 10
+})
+
