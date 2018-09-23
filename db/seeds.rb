@@ -212,6 +212,7 @@ session4 = ExerciseSession.create!({
 puts "Generating some user nutrition..."
 
 usernutrition1 = UserNutrition.create!({
+  user_id: 1,
   calories: 1000,
   protein: 80,
   fat: 20,
@@ -220,6 +221,7 @@ usernutrition1 = UserNutrition.create!({
 })
 
 usernutrition2 = UserNutrition.create!({
+  user_id: 1,
   calories: 2300,
   protein: 100,
   fat: 35,
@@ -228,6 +230,7 @@ usernutrition2 = UserNutrition.create!({
 })
 
 usernutrition3 = UserNutrition.create!({
+  user_id: 2,
   calories: 3000,
   protein: 200,
   fat: 20,
@@ -236,10 +239,13 @@ usernutrition3 = UserNutrition.create!({
 })
 
 usernutrition4 = UserNutrition.create!({
+  user_id: 4,
   calories: 4000,
   protein: 200,
   fat: 10,
   carbohydrates: 20,
   sugar: 10
 })
+
+puts "Done seeding! You have data now"
 

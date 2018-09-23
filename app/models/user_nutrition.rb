@@ -1,7 +1,7 @@
 class UserNutrition < ApplicationRecord
 
   validates :calories, presence: true
-  belongs_to: user
+  belongs_to :user
   after_initialize :init
 
   def init

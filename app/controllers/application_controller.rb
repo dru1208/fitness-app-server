@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
 
   include ActionController::MimeResponds
 
-  responders :my_application
+  # responders :my_application
 
   def render_resource(resource)
     if resource.errors.empty?
