@@ -1,4 +1,10 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable,
+         :jwt_authenticatable,
+         :registerable,
+         jwt_revocation_strategy: JwtBlacklist
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -14,5 +20,10 @@ class User < ApplicationRecord
 
   has_many :exercise_sessions
 
+
+
+  def jwt_payload
+    {'reply' => 'youve made a successful request'}
+  end
 
 end
