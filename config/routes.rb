@@ -17,11 +17,6 @@ Rails.application.routes.draw do
     resources :blogs, only: [:create, :destroy, :index]
 
     resources :articles, only: [:create, :destroy, :index]
-  end
-
-
-
-
 
     devise_for  :users,
                 path: '',

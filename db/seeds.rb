@@ -61,25 +61,25 @@ user4 = User.create!({
 puts "Generating some content articles..."
 
 article1 = Article.create!({
-  title: "get swole bois",
+  title: "Get swole bois",
   link: "www.example.com",
   user_id: 1
 })
 
 article2 = Article.create!({
-  title: "keto is the way",
+  title: "Keto is the way: A book by Vincent Ly",
   link: "www.example.com",
   user_id: 3
 })
 
 article3 = Article.create!({
-  title: "i gym every morning and im big af",
+  title: "I gym every morning and I'm big af",
   link: "www.example.com",
   user_id: 2
 })
 
 articl4 = Article.create!({
-  title: "is big better?",
+  title: "Is big better? A comprehensive guide towards a bigger you",
   link: "www.example.com",
   user_id: 4
 })
