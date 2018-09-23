@@ -149,31 +149,31 @@ puts "Generating some fitness goals..."
 
 goal1 = FitnessGoal.create!({
   description: "Run 5km",
-  datetime: "October 5, 2018 5:00 AM",
+  datetime: "October 4, 2018 5:00 AM",
   user_id: 1
 })
 
 goal2 = FitnessGoal.create!({
   description: "Lose 10 lbs",
-  datetime: "October 5, 2018 5:00 AM",
+  datetime: "October 4, 2018 5:00 AM",
   user_id: 2
 })
 
 goal3 = FitnessGoal.create!({
   description: "Wrestle with Andrew",
-  datetime: "October 5, 2018 5:00 AM",
+  datetime: "October 4, 2018 5:00 AM",
   user_id: 2
 })
 
 goal4 = FitnessGoal.create!({
   description: "Grow 1 inch on bicep",
-  datetime: "October 5, 2018 5:00 AM",
+  datetime: "October 4, 2018 5:00 AM",
   user_id: 1
 })
 
 goal5 = FitnessGoal.create!({
   description: "Yoga with Chris",
-  datetime: "October 5, 2018 5:00 AM",
+  datetime: "October 4, 2018 5:00 AM",
   user_id: 1
 })
 
