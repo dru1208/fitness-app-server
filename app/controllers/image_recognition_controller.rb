@@ -1,5 +1,3 @@
-require 'net/http'
-require 'net/https'
 require 'uri'
 require 'ibm_watson'
 
@@ -12,7 +10,7 @@ class ImageRecognitionController < ApplicationController
 
     visual_recognition = IBMWatson::VisualRecognitionV3.new(
       version: "2018-03-19",
-      iam_apikey: apikey
+      iam_apikey: ENV['WATSON_API_KEY']
     )
 
     f = File.new('./public/images/' + imageName, 'wb')
