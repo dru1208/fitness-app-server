@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
     resources :articles, only: [:create, :destroy, :index]
 
+    resources :image_recognition, only: [:create]
+
     devise_for  :users,
                 path: '',
                 path_names: {
