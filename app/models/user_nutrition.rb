@@ -1,6 +1,5 @@
 class UserNutrition < ApplicationRecord
 
-  validates :calories, presence: true
   belongs_to :user
   after_initialize :init
 
@@ -10,5 +9,6 @@ class UserNutrition < ApplicationRecord
     self.carbohydrates  ||= 0.0
     self.sugar          ||= 0.0
   end
+
 
 end

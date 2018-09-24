@@ -23,6 +23,10 @@ gem 'devise-jwt', '~> 0.5.8'
 
 gem 'fabrication'
 
+gem 'http'
+
+gem 'json'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

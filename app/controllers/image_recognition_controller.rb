@@ -1,5 +1,8 @@
 require 'uri'
 require 'ibm_watson'
+require 'json'
+
+
 
 class ImageRecognitionController < ApplicationController
   def create
@@ -18,11 +21,13 @@ class ImageRecognitionController < ApplicationController
     f.close
 
     File.open('./public/images/' + imageName) do |image_file|
-      foodResult = visual_recognition.classify(
+      foodResult = JSON.parse(visual_recognition.classify(
         images_file: image_file,
         threshold: 0.1
-      ).result
-      puts JSON.pretty_generate(foodResult)
+      ).result)
+      # puts JSON.pretty_generate(foodResult)
+      foodName = self.convertImageJSONNutrition(foodResult)
+      puts foodName
     end
 
     respond_to do |format|
@@ -30,5 +35,11 @@ class ImageRecognitionController < ApplicationController
       format.json  { render :json => msg } # don't do msg.to_json
     end
   end
+
+  def convertImageJSONNutrition(json)
+    result = json[:images][0][:classes][0][:class]
+    puts result
+  end
+
 
 end
