@@ -1,5 +1,9 @@
 require 'uri'
 require 'ibm_watson'
+require 'json'
+require 'http'
+
+
 
 class ImageRecognitionController < ApplicationController
   def create
@@ -22,7 +26,15 @@ class ImageRecognitionController < ApplicationController
         images_file: image_file,
         threshold: 0.1
       ).result
-      puts JSON.pretty_generate(foodResult)
+      # puts JSON.pretty_generate(foodResult)
+      imageFoodName = ImageRecognitionController.convertImageJSONNutrition(foodResult)
+      newUser = NutritionSearchController.searchResultSave(imageFoodName)
+      puts newUser
+
+
+
+
+
     end
 
     respond_to do |format|
@@ -30,5 +42,10 @@ class ImageRecognitionController < ApplicationController
       format.json  { render :json => msg } # don't do msg.to_json
     end
   end
+
+  def self.convertImageJSONNutrition(json)
+    result = json['images'][0]['classifiers'][0]['classes'][0]['class']
+  end
+
 
 end
