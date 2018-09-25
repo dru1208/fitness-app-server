@@ -64,6 +64,7 @@ GEM
     erubi (1.7.1)
     fabrication (2.20.1)
     ffi (1.9.25)
+    geocoder (1.5.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.1.0)
@@ -175,6 +176,7 @@ DEPENDENCIES
   devise
   devise-jwt (~> 0.5.8)
   fabrication
+  geocoder
   listen (>= 3.0.5, < 3.2)
   pg
   puma (~> 3.7)
