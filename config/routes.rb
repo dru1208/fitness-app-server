@@ -1,23 +1,34 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :fitness_goals, only: [:index, :create, :update, :destroy]
+  scope :api, defaults: {format: :json} do
+    resources :exercise_sessions, only: [:create, :index]
 
-  resources :weekly_activities, only: [:index, :create]
+    resources :fitness_goals, only: [:create, :destroy, :index]
 
-  resources :user_nutrition, only: [:index]
+    resources :user_nutritions, only: [:create, :index]
 
-  resources :events, only: [:index]
+    resources :maps, only: [:index]
 
-  resources :feed, only: [:index]
+    resources :events, only: [:create, :destroy, :index]
 
-  resources :map, only: [:index]
+    resources :event_users, only: [:create, :destroy, :index]
 
-  resources :nutrition, only: [:create]
+    resources :blogs, only: [:create, :destroy, :index]
 
-  resources :blogs, only: [:index, :create, :destroy]
+    resources :articles, only: [:create, :destroy, :index]
 
-  resources :events, only: [:index, :create, :destroy]
-
+    devise_for  :users,
+                path: '',
+                path_names: {
+                  sign_in: '/login',
+                  sign_out: '/logout',
+                  registration: '/register'
+                },
+                controllers: {
+                  sessions: 'sessions',
+                  registrations: 'registrations'
+                }
+  end
 end
 
 
