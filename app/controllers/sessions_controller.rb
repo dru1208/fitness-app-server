@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   respond_to :json
 
   private
@@ -12,3 +13,4 @@ class SessionsController < ApplicationController
   end
 end
 
+>>>>>>> combined-features

@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
     resources :user_nutritions, only: [:create, :index]
 
-    resources :maps, only: [:index]
+    resources :event_maps, only: [:index]
+
+    resources :gym_maps, only: [:index]
 
     resources :events, only: [:create, :destroy, :index]
 
@@ -16,6 +18,8 @@ Rails.application.routes.draw do
     resources :blogs, only: [:create, :destroy, :index]
 
     resources :articles, only: [:create, :destroy, :index]
+
+    resources :image_recognition, only: [:create]
 
     devise_for  :users,
                 path: '',
