@@ -2,13 +2,15 @@ require 'geocoder'
 
 class MapsController < ApplicationController
   def index
-    locations = Event.all.select(:location)
+    locations = Event.all.pluck(:location)
     resultsArray = []
-     locations.each do |point|
-       result = Geocoder.search(point.location)
-       resultsArray.push(result.first.coordinates)
-     end
+
+    locations.each do |point|
+      result = Geocoder.search(point)
+      resultsArray.push(result.first.coordinates)
+    end
     render json: resultsArray
   end
 
 end
+

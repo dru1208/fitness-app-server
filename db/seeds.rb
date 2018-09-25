@@ -145,6 +145,55 @@ event4 = Event.create!({
   user_id: 4
 })
 
+event5 = Event.create!({
+  name: "Pool Party with Barney",
+  description: "Pool party but everyone has to dress as Barney the dinosaur",
+  location: "St. Andrew Station, Toronto",
+  datetime: "November 12, 2018 12:00 AM",
+  user_id: 4
+})
+
+event6 = Event.create!({
+  name: "Pool Party with Barney",
+  description: "Pool party but everyone has to dress as Barney the dinosaur",
+  location: "Union Station, Toronto",
+  datetime: "November 12, 2018 12:00 AM",
+  user_id: 4
+})
+
+event7 = Event.create!({
+  name: "Pool Party with Barney",
+  description: "Pool party but everyone has to dress as Barney the dinosaur",
+  location: "King Station, Toronto",
+  datetime: "November 12, 2018 12:00 AM",
+  user_id: 4
+})
+
+event8 = Event.create!({
+  name: "Pool Party with Barney",
+  description: "Pool party but everyone has to dress as Barney the dinosaur",
+  location: "Queen Station, Toronto",
+  datetime: "November 12, 2018 12:00 AM",
+  user_id: 4
+})
+
+event9 = Event.create!({
+  name: "Pool Party with Barney",
+  description: "Pool party but everyone has to dress as Barney the dinosaur",
+  location: "Osgoode Station, Toronto",
+  datetime: "November 12, 2018 12:00 AM",
+  user_id: 4
+})
+
+event10 = Event.create!({
+  name: "Pool Party with Barney",
+  description: "Pool party but everyone has to dress as Barney the dinosaur",
+  location: "PAI, Toronto",
+  datetime: "November 12, 2018 12:00 AM",
+  user_id: 4
+})
+
+
 puts "Generating some fitness goals..."
 
 goal1 = FitnessGoal.create!({
