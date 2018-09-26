@@ -26,7 +26,8 @@ user1 = User.create!({
   first_name: 'andrew',
   last_name: 'hsieh',
   email: 'andrewhsieh1208@gmail.com',
-  password: 'andrew',
+  password: 'andrewhsieh',
+  password_confirmation: 'andrewhsieh',
   location: '35 Fielding Ave, Toronto'
 })
 
@@ -35,7 +36,8 @@ user2 = User.create!({
   first_name: 'chris',
   last_name: 'lo',
   email: 'chrislo.7@live.com',
-  password: 'chris',
+  password: 'chrislo',
+  password_confirmation: 'chrislo',
   location: '46 Spadina Ave, Toronto'
 })
 
@@ -44,7 +46,8 @@ user3 = User.create!({
   first_name: 'vincent',
   last_name: 'ly',
   email: 'veely1@gmail.com',
-  password: 'vincent',
+  password: 'vincently',
+  password_confirmation: 'vincently',
   location: 'eaton center, toronto'
 })
 
@@ -53,7 +56,8 @@ user4 = User.create!({
   first_name: 'lexy',
   last_name: 'yu',
   email: 'lexy@gmail.com',
-  password: 'lexy',
+  password: 'lexyyu',
+  password_confirmation: 'lexyyu',
   location: 'kensington market, toronto'
 })
 
@@ -144,6 +148,55 @@ event4 = Event.create!({
   datetime: "November 12, 2018 12:00 AM",
   user_id: 4
 })
+
+event5 = Event.create!({
+  name: "Group Bench Pressing",
+  description: "Bench press together",
+  location: "267 Richmond St W, Toronto",
+  datetime: "November 13, 2018 12:00 AM",
+  user_id: 1
+})
+
+event6 = Event.create!({
+  name: "Deadlifting with Dora",
+  description: "Deadlift seminar with Dora the Explorer",
+  location: "Union Station, Toronto",
+  datetime: "November 12, 2018 12:00 AM",
+  user_id: 2
+})
+
+event7 = Event.create!({
+  name: "Surfing in the flood",
+  description: "Surfing bro",
+  location: "King Station, Toronto",
+  datetime: "November 12, 2018 12:00 AM",
+  user_id: 3
+})
+
+event8 = Event.create!({
+  name: "Basketball game in the subway",
+  description: "Playing basketball in the subway",
+  location: "Queen Station, Toronto",
+  datetime: "November 12, 2018 12:00 AM",
+  user_id: 1
+})
+
+event9 = Event.create!({
+  name: "Dancing with Drake",
+  description: "Dance with Drake",
+  location: "Osgoode Station, Toronto",
+  datetime: "November 12, 2018 12:00 AM",
+  user_id: 2
+})
+
+event10 = Event.create!({
+  name: "Soccer with Seanye West",
+  description: "Group soccer session with Seanye West",
+  location: "Roundhouse Park, Toronto",
+  datetime: "November 12, 2018 12:00 AM",
+  user_id: 3
+})
+
 
 puts "Generating some fitness goals..."
 

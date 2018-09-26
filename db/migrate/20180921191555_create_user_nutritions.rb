@@ -8,6 +8,11 @@ class CreateUserNutritions < ActiveRecord::Migration[5.1]
       t.float :carbohydrates
       t.float :sugar
       t.datetime :datetime
+      t.string :image_path
+      t.integer :serving_size
+      t.float :sodium
+      t.float :cholesterol
+      t.string :meal_query
 
       t.timestamps
     end
