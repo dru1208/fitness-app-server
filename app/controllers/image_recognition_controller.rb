@@ -25,10 +25,7 @@ class ImageRecognitionController < ApplicationController
       puts JSON.pretty_generate(foodResult)
     end
 
-    respond_to do |format|
-      msg = { :status => "Success", :message => foodResult }
-      format.json  { render :json => msg } # don't do msg.to_json
-    end
+    render :json foodResult
   end
 
 end
