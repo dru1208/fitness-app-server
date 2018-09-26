@@ -26,4 +26,8 @@ class NutritionSearchController < ApplicationController
       meal_query: name)
   end
 
+  def create
+    NutritionSearchController.searchResultSave(params[:query])
+  end
+
 end

@@ -26,7 +26,8 @@ user1 = User.create!({
   first_name: 'andrew',
   last_name: 'hsieh',
   email: 'andrewhsieh1208@gmail.com',
-  password: 'andrew',
+  password: 'andrewhsieh',
+  password_confirmation: 'andrewhsieh',
   location: '35 Fielding Ave, Toronto'
 })
 
@@ -35,7 +36,8 @@ user2 = User.create!({
   first_name: 'chris',
   last_name: 'lo',
   email: 'chrislo.7@live.com',
-  password: 'chris',
+  password: 'chrislo',
+  password_confirmation: 'chrislo',
   location: '46 Spadina Ave, Toronto'
 })
 
@@ -44,7 +46,8 @@ user3 = User.create!({
   first_name: 'vincent',
   last_name: 'ly',
   email: 'veely1@gmail.com',
-  password: 'vincent',
+  password: 'vincently',
+  password_confirmation: 'vincently',
   location: 'eaton center, toronto'
 })
 
@@ -53,7 +56,8 @@ user4 = User.create!({
   first_name: 'lexy',
   last_name: 'yu',
   email: 'lexy@gmail.com',
-  password: 'lexy',
+  password: 'lexyyu',
+  password_confirmation: 'lexyyu',
   location: 'kensington market, toronto'
 })
 
