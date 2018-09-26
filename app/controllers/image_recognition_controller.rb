@@ -30,17 +30,10 @@ class ImageRecognitionController < ApplicationController
       imageFoodName = ImageRecognitionController.convertImageJSONNutrition(foodResult)
       newUser = NutritionSearchController.searchResultSave(imageFoodName)
       puts newUser
-
-
-
-
-
     end
 
-    respond_to do |format|
-      msg = { :status => "Success", :message => foodResult }
-      format.json  { render :json => msg } # don't do msg.to_json
-    end
+
+    render json: foodResult
   end
 
   def self.convertImageJSONNutrition(json)
