@@ -1,7 +1,14 @@
 
 Rails.application.routes.draw do
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   scope :api, defaults: {format: :json} do
+
+    post '/login', to: 'sessions#create'
+
+    post '/register', to: 'users#create'
+
     resources :exercise_sessions, only: [:create, :index]
 
     resources :fitness_goals, only: [:create, :destroy, :index]
@@ -20,17 +27,10 @@ Rails.application.routes.draw do
 
     resources :articles, only: [:create, :destroy, :index]
 
-    devise_for  :users,
-                path: '',
-                path_names: {
-                  sign_in: '/login',
-                  sign_out: '/logout',
-                  registration: '/register'
-                },
-                controllers: {
-                  sessions: 'sessions',
-                  registrations: 'registrations'
-                }
+    resources :image_recognition, only: [:create]
+
+    resources :nutrition_search, only: [:create]
+
   end
 end
 
