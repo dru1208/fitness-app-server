@@ -1,6 +1,6 @@
 require 'geocoder'
 
-class MapsController < ApplicationController
+class EventMapsController < ApplicationController
   def index
     coordinates = Event.all.pluck(:location)
     coordinatesArray = []
@@ -14,4 +14,3 @@ class MapsController < ApplicationController
   end
 
 end
-
