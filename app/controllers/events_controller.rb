@@ -1,6 +1,9 @@
 class EventsController < ApplicationController
   def create
-    @event = Event.create(name: params[:name], description: params[:description], location: params[:location],datetime: params[:datetime], user_id: 1)
+    @event = Event.new(name: params[:name], description: params[:description], location: params[:location],datetime: params[:datetime], user_id: 1)
+    if @event.save
+      render json: @event
+    end
   end
 
   # def destroy
