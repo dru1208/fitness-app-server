@@ -2,6 +2,7 @@ require 'geocoder'
 
 class EventMapsController < ApplicationController
   def index
+
     locations = Event.all.pluck(:location, :name, :description, :datetime)
 
     # puts Geocoder.search(locations[0][0]).first.data["lat"]
@@ -20,6 +21,7 @@ class EventMapsController < ApplicationController
 
 
     render json: @resultsArray
+
   end
 
 

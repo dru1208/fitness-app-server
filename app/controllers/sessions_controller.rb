@@ -1,16 +1,17 @@
 class SessionsController < ApplicationController
 
-  respond_to :json
-
-  private
-
-  def respond_with(resource, _opts = {})
-    render json: resource
+  def create
+    @user = User.find_by_email(params[:email])
+    if @user && @user.authenticate(params[:password])
+      payload = {
+        firstName: @user[:first_name],
+        userID: @user[:id],
+        email: @user[:email]}
+      jwt = UsersController.generate_jwt(payload)
+      render json: jwt
+    else
+      render json: false
+    end
   end
 
-  def respond_to_on_destroy
-    head :no_content
-  end
 end
-
->>>>>>> combined-features
