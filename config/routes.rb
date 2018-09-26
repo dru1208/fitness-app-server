@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   scope :api, defaults: {format: :json} do
@@ -7,7 +8,9 @@ Rails.application.routes.draw do
 
     resources :user_nutritions, only: [:create, :index]
 
-    resources :maps, only: [:index]
+    resources :event_maps, only: [:index]
+
+    resources :gym_maps, only: [:index]
 
     resources :events, only: [:create, :destroy, :index]
 
