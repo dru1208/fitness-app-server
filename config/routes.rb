@@ -32,5 +32,4 @@ Rails.application.routes.draw do
                   registrations: 'registrations'
                 }
   end
-
 end

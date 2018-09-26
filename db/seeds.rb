@@ -146,51 +146,51 @@ event4 = Event.create!({
 })
 
 event5 = Event.create!({
-  name: "Pool Party with Barney",
-  description: "Pool party but everyone has to dress as Barney the dinosaur",
-  location: "St. Andrew Station, Toronto",
-  datetime: "November 12, 2018 12:00 AM",
-  user_id: 4
+  name: "Group Bench Pressing",
+  description: "Bench press together",
+  location: "267 Richmond St W, Toronto",
+  datetime: "November 13, 2018 12:00 AM",
+  user_id: 1
 })
 
 event6 = Event.create!({
-  name: "Pool Party with Barney",
-  description: "Pool party but everyone has to dress as Barney the dinosaur",
+  name: "Deadlifting with Dora",
+  description: "Deadlift seminar with Dora the Explorer",
   location: "Union Station, Toronto",
   datetime: "November 12, 2018 12:00 AM",
-  user_id: 4
+  user_id: 2
 })
 
 event7 = Event.create!({
-  name: "Pool Party with Barney",
-  description: "Pool party but everyone has to dress as Barney the dinosaur",
+  name: "Surfing in the flood",
+  description: "Surfing bro",
   location: "King Station, Toronto",
   datetime: "November 12, 2018 12:00 AM",
-  user_id: 4
+  user_id: 3
 })
 
 event8 = Event.create!({
-  name: "Pool Party with Barney",
-  description: "Pool party but everyone has to dress as Barney the dinosaur",
+  name: "Basketball game in the subway",
+  description: "Playing basketball in the subway",
   location: "Queen Station, Toronto",
   datetime: "November 12, 2018 12:00 AM",
-  user_id: 4
+  user_id: 1
 })
 
 event9 = Event.create!({
-  name: "Pool Party with Barney",
-  description: "Pool party but everyone has to dress as Barney the dinosaur",
+  name: "Dancing with Drake",
+  description: "Dance with Drake",
   location: "Osgoode Station, Toronto",
   datetime: "November 12, 2018 12:00 AM",
-  user_id: 4
+  user_id: 2
 })
 
 event10 = Event.create!({
-  name: "Pool Party with Barney",
-  description: "Pool party but everyone has to dress as Barney the dinosaur",
-  location: "PAI, Toronto",
+  name: "Soccer with Seanye West",
+  description: "Group soccer session with Seanye West",
+  location: "Roundhouse Park, Toronto",
   datetime: "November 12, 2018 12:00 AM",
-  user_id: 4
+  user_id: 3
 })
 
 
