@@ -1,6 +1,9 @@
 class BlogsController < ApplicationController
   def create
-    @blog = Blog.create(title: params[:title], content: params[:content], user_id: 1)
+    @blog = Blog.new(title: params[:title], content: params[:content], user_id: params[:id])
+    if @blog.save
+      render json: @blog
+    end
   end
 
   def index
