@@ -30,14 +30,10 @@ class ImageRecognitionController < ApplicationController
       imageFoodName = ImageRecognitionController.convertImageJSONNutrition(foodResult)
       newUser = NutritionSearchController.searchResultSave(imageFoodName)
       puts newUser
-
-
-
-
-
     end
 
-    render :json foodResult
+
+    render json: foodResult
   end
 
   def self.convertImageJSONNutrition(json)
