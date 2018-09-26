@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def create
-    @article = Article.create(title: params[:title], link: params[:link], user_id: 1)
+    @article = Article.create(title: params[:title], link: params[:link], user_id: params[:id])
   end
 
   def index
