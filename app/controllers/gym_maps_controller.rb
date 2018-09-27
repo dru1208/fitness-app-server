@@ -19,9 +19,10 @@ class GymMapsController < ApplicationController
     location = decoded_jwt[0]["location"]
 
 
-    # puts Geocoder.search(location[0]).first.data["lat"]
-    centerLat = Geocoder.search(location[0]).first.data["lat"]
-    centerLng = Geocoder.search(location[0]).first.data["lon"]
+
+    locationArray = Geocoder.search(location).first.coordinates
+    centerLat = locationArray[0]
+    centerLng = locationArray[1]
 
 
     @client = GooglePlaces::Client.new(ENV['GOOGLE_PLACES_API_TOKEN'])
