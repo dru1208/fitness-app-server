@@ -9,7 +9,9 @@ class SessionsController < ApplicationController
       payload = {
         firstName: @user[:first_name],
         userID: @user[:id],
-        email: @user[:email]}
+        email: @user[:email],
+        location: @user[:location]
+      }
       jwt = SessionsController.generate_jwt(payload)
       render json: jwt
     else
