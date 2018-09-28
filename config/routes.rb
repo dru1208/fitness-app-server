@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
     resources :articles, only: [:create, :destroy, :index]
 
+    resources :feeds, only: [:index]
+
     resources :image_recognition, only: [:create]
 
     resources :nutrition_search, only: [:create]
