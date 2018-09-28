@@ -23,17 +23,14 @@ class GymMapsController < ApplicationController
     centerLat = Geocoder.search(location[0]).first.data["lat"]
     centerLng = Geocoder.search(location[0]).first.data["lon"]
 
+    puts Geocoder.search(location[0]).first.coordinates
 
     @client = GooglePlaces::Client.new(ENV['GOOGLE_PLACES_API_TOKEN'])
     maps = @client.spots(centerLat.to_f, centerLng.to_f, :types => ['gym', 'health'], :exclude => 'store')
     puts "hello1"
+    puts Geocoder.search(location[0]).first.data
 
-    puts maps
-
-     render json: maps
-
-
-
+    render json: maps
 
   end
 end
