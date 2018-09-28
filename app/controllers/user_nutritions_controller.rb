@@ -1,7 +1,8 @@
 class UserNutritionsController < ApplicationController
   def index
-    nutrition = UserNutrition.select(:user_id, :calories, :protein, :fat, :carbohydrates, :sugar, :datetime, :sodium, :cholesterol, :serving_size, :meal_query).where("user_id = " + params[:user_id].to_s)
-    render json: nutrition
+    nutritionList = UserNutrition.select(:user_id, :calories, :protein, :fat, :carbohydrates, :sugar, :datetime, :sodium, :cholesterol, :serving_size, :meal_query).where("user_id = " + params[:user_id].to_s)
+
+    render json: nutritionList
   end
 
   def create
@@ -14,6 +15,10 @@ class UserNutritionsController < ApplicationController
     else
       render json: false
     end
+  end
+
+  def update
+
   end
 
   private

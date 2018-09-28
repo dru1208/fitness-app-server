@@ -30,6 +30,8 @@ Rails.application.routes.draw do
 
     resources :nutrition_search, only: [:create]
 
+    resources :dashboard_nutritions, only: [:index]
+
   end
 end
 
