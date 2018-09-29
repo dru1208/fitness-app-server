@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
     resources :exercise_sessions, only: [:create, :index]
 
-    resources :fitness_goals, only: [:create, :destroy, :index]
+    resources :fitness_goals, only: [:create, :destroy, :index, :update]
 
     resources :user_nutritions, only: [:create, :index]
 
