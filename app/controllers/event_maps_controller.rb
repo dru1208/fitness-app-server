@@ -3,7 +3,7 @@ require 'geocoder'
 class EventMapsController < ApplicationController
   def index
 
-    locations = Event.all.pluck(:location, :name, :description, :datetime)
+    locations = Event.all.pluck(:location, :name, :description, :datetime, :id)
 
     # puts Geocoder.search(locations[0][0]).first.data["lat"]
 
@@ -15,7 +15,8 @@ class EventMapsController < ApplicationController
         description: point[2],
         datetime: point[3],
         lat: loc["lat"],
-        lng: loc["lon"]
+        lng: loc["lon"],
+        id: point[4]
       }
     end
 

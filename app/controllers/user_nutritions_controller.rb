@@ -2,7 +2,9 @@ class UserNutritionsController < ApplicationController
   def index
     nutrition = UserNutrition.select(:user_id, :calories, :protein, :fat, :carbohydrates, :sugar).where("user_id = " + params[:user_id])
     render json: nutrition
+
   end
+
 
   def create
     user = User.find params[:user_id]
@@ -16,6 +18,7 @@ class UserNutritionsController < ApplicationController
       }
     end
   end
+
 
   private
       def nutrition_params
