@@ -11,8 +11,6 @@ class DashboardNutritionsController < ApplicationController
     sugar = UserNutrition.where("user_id = " + params[:user_id].to_s + " AND datetime >= '#{last_date_adjusted.to_s}'").sum(:sugar)
     sodium = UserNutrition.where("user_id = " + params[:user_id].to_s + " AND datetime >= '#{last_date_adjusted.to_s}'").sum(:sodium)
     cholesterol = UserNutrition.where("user_id = " + params[:user_id].to_s + " AND datetime >= '#{last_date_adjusted.to_s}'").sum(:cholesterol)
-    puts last_date_adjusted
-    puts sodium
 
 
 
