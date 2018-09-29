@@ -21,7 +21,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    events = Event.all.select(:id, :name, :description, :location, :datetime)
+    events = Event.all.select(:id, :name, :description, :location, :datetime, :user_id)
     render json: events
   end
 end
