@@ -6,7 +6,7 @@ class FitnessGoal < ApplicationRecord
   belongs_to :user
   after_initialize :init
   def init
-    self.completed = false
+    self.completed ||= false
   end
 
 end
