@@ -27,13 +27,14 @@ class ImageRecognitionController < ApplicationController
         threshold: 0.1
       ).result
       # puts JSON.pretty_generate(foodResult)
+      inputTime = DateTime.parse(params[:datetime])
       imageFoodName = ImageRecognitionController.convertImageJSONNutrition(foodResult)
-      newUser = NutritionSearchController.searchResultSave(imageFoodName)
+      newUser = NutritionSearchController.searchResultSave(imageFoodName, params[:user_id], inputTime)
       puts newUser
     end
 
-
-    render json: foodResult
+    nutritionList = UserNutrition.select(:user_id, :calories, :protein, :fat, :carbohydrates, :sugar, :datetime, :sodium, :cholesterol, :serving_size, :meal_query).where("user_id = " + params[:user_id].to_s)
+    render json: nutritionList
   end
 
   def self.convertImageJSONNutrition(json)
