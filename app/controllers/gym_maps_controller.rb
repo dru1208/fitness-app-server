@@ -13,25 +13,27 @@ class GymMapsController < ApplicationController
 
   def index
 
-
     jwt = request.headers["HTTP_AUTHORIZATION"]
     decoded_jwt = GymMapsController.decode_jwt(jwt)
     location = decoded_jwt[0]["location"]
-
-
 
     locationArray = Geocoder.search(location).first.coordinates
     centerLat = locationArray[0]
     centerLng = locationArray[1]
 
-    puts Geocoder.search(location[0]).first.coordinates
 
     @client = GooglePlaces::Client.new(ENV['GOOGLE_PLACES_API_TOKEN'])
     maps = @client.spots(centerLat.to_f, centerLng.to_f, :types => ['gym', 'health'], :exclude => 'store')
-    puts "hello1"
-    puts Geocoder.search(location[0]).first.data
 
-    render json: maps
+
+    render json: {
+      centerLat: centerLat,
+      centerLng: centerLng,
+      maps: maps
+    }
+
+
+
 
   end
 end
