@@ -9,7 +9,6 @@ class FitnessGoalsController < ApplicationController
 
   def index
     goals = FitnessGoal.all.select(:id, :description, :datetime, :completed)
-    puts "goals is " + goals.inspect
     render json: goals
   end
 
