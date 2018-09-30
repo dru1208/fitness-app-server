@@ -8,7 +8,7 @@ class FitnessGoalsController < ApplicationController
   end
 
   def index
-    goals = FitnessGoal.all.select(:id, :description, :datetime, :completed)
+    goals = FitnessGoal.select(:id, :description, :datetime, :completed)
     render json: goals
   end
 

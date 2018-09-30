@@ -7,6 +7,6 @@ class ExerciseSession < ApplicationRecord
 
   after_initialize :init
   def init
-    self.week_of ||= Date.current.beginning_of_week(start_day = :sunday).to_s
+    self.week_of ||= Date.current.beginning_of_week(start_day = :sunday).to_s if self.has_attribute? :week_of
   end
 end

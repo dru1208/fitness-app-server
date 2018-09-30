@@ -1,14 +1,14 @@
 class ExerciseSessionsController < ApplicationController
   def index
-    # puts "beginning of week: " + Date.current.beginning_of_week(start_day = :sunday).to_s
-    # @exercise_sessions = ExerciseSession.select(:datetime, :minutes).where("user_id = " + params[:user_id] + " AND week_of = '" + Date.current.beginning_of_week(start_day = :sunday).to_s + "'")
-    # puts "exercise_sessions is: " + @exercise_sessions.inspect
-    # render json: @exercise_sessions
+    @exercise_sessions = ExerciseSession.select(:datetime, :minutes).where("user_id = " + params[:user_id] + " AND week_of = '" + Date.current.beginning_of_week(start_day = :sunday).to_s + "'")
+    render json: @exercise_sessions
   end
 
   def create
+    exerciseDate = params[:datetime].to_date
     user = User.find params[:user_id]
     exercise_session = user.exercise_sessions.new(exercise_session_params)
+    exercise_session.week_of = exerciseDate.beginning_of_week(start_day = :sunday).to_s
 
     if exercise_session.save
         render json: exercise_session
@@ -18,15 +18,10 @@ class ExerciseSessionsController < ApplicationController
           message: "Did not save to database"
         }
     end
-    # render json: @exercise_sessions
 
   end
   private
     def exercise_session_params
       params.permit(:user_id, :minutes, :datetime)
     end
-
 end
-
-
-# add in something to find exercise sessions by the last sunday
