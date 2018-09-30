@@ -7,12 +7,13 @@ class NutritionSearchController < ApplicationController
       :"x-remote-user-id" => '0')
       .post('https://trackapi.nutritionix.com/v2/natural/nutrients', :json => {:query => name})
     foodResponse = JSON.parse(response.body)
+    puts foodResponse.inspect
     if foodResponse["foods"]
       foodName = foodResponse["foods"][0]["food_name"]
       foodCalories = foodResponse["foods"][0]["nf_calories"]
       foodFat = foodResponse["foods"][0]["nf_total_fat"]
-      foodCholesterol = foodResponse["foods"][0]["nf_cholesterol"]
-      foodSodium = foodResponse["foods"][0]["nf_sodium"]
+      foodCholesterol = foodResponse["foods"][0]["nf_cholesterol"] / 1000
+      foodSodium = foodResponse["foods"][0]["nf_sodium"] / 1000
       foodCarbs = foodResponse["foods"][0]["nf_total_carbohydrate"]
       foodSugars = foodResponse["foods"][0]["nf_sugars"]
       foodProtein = foodResponse["foods"][0]["nf_protein"]
