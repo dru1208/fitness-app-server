@@ -33,6 +33,9 @@ module FitnessProjectServer
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    #Set time zone to Eastern Time
+    config.time_zone = 'Eastern Time (US & Canada)'
+
 
 
 

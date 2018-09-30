@@ -24,6 +24,7 @@ class DashboardNutritionsController < ApplicationController
       cholesterol: cholesterol
     }
 
+    puts "nutrition summary: " + nutritionSummary.inspect
     render json: nutritionSummary
   end
 end

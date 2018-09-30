@@ -1,9 +1,9 @@
 class ExerciseSessionsController < ApplicationController
   def index
-
-    @exercise_sessions = ExerciseSession.all.select(:datetime, :minutes)
-
-    render json: @exercise_sessions
+    # puts "beginning of week: " + Date.current.beginning_of_week(start_day = :sunday).to_s
+    # @exercise_sessions = ExerciseSession.select(:datetime, :minutes).where("user_id = " + params[:user_id] + " AND week_of = '" + Date.current.beginning_of_week(start_day = :sunday).to_s + "'")
+    # puts "exercise_sessions is: " + @exercise_sessions.inspect
+    # render json: @exercise_sessions
   end
 
   def create
@@ -12,7 +12,6 @@ class ExerciseSessionsController < ApplicationController
 
     if exercise_session.save
         render json: exercise_session
-        puts "it worked!!!!!!!!!!"
     else
         render json: {
           status: "Failed",

@@ -235,31 +235,36 @@ puts "Generating some exercise session recording..."
 session1 = ExerciseSession.create!({
   datetime: "September 30, 2018 5:00 AM",
   minutes: 120,
-  user_id: 1
+  user_id: 1,
+  week_of: "2018-09-23"
 })
 
 session2 = ExerciseSession.create!({
   datetime: "October 1, 2018 5:00 AM",
   minutes: 60,
-  user_id: 1
+  user_id: 1,
+  week_of: "2018-09-23"
 })
 
 session3 = ExerciseSession.create!({
   datetime: "October 2, 2018 5:00 AM",
   minutes: 0,
-  user_id: 1
+  user_id: 1,
+  week_of: "2018-09-23"
 })
 
 session3 = ExerciseSession.create!({
   datetime: "October 3, 2018 5:00 AM",
   minutes: 45,
-  user_id: 1
+  user_id: 1,
+  week_of: "2018-09-23"
 })
 
 session4 = ExerciseSession.create!({
   datetime: "October 4, 2018 5:00 AM",
   minutes: 180,
-  user_id: 1
+  user_id: 1,
+  week_of: "2018-09-23"
 })
 
 puts "Generating some user nutrition..."

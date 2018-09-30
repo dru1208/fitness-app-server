@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20180921192057) do
     t.integer "minutes"
     t.datetime "datetime"
     t.integer "user_id"
+    t.date "week_of"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
