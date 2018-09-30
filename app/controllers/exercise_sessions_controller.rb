@@ -11,12 +11,12 @@ class ExerciseSessionsController < ApplicationController
     exercise_session.week_of = exerciseDate.beginning_of_week(start_day = :sunday).to_s
 
     if exercise_session.save
-        render json: exercise_session
+      render json: exercise_session
     else
-        render json: {
-          status: "Failed",
-          message: "Did not save to database"
-        }
+      render json: {
+        status: "Failed",
+        message: "Did not save to database"
+      }
     end
 
   end
