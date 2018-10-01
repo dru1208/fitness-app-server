@@ -6,6 +6,8 @@ class EventsController < ApplicationController
       puts 'saved'
       @events = Event.all.select(:id, :name, :description, :location, :datetime)
       render json: @events
+    else
+      render json: false
     end
 
   end
