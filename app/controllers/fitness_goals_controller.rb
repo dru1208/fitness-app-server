@@ -15,6 +15,12 @@ class FitnessGoalsController < ApplicationController
 
   def destroy
     @goal = FitnessGoal.find(params[:id])
+    if @goal.destroy
+      @goals = FitnessGoal.select(:id, :description, :datetime, :completed).where("user_id = " + params[:user_id].to_s)
+      render json: @goals
+    else
+      render json: false
+    end
   end
 
   def index
