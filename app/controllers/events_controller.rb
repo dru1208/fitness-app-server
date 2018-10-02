@@ -3,7 +3,6 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(name: params[:name], description: params[:description], location: params[:location], datetime: params[:datetime], user_id: params[:id])
     if @event.save
-      puts 'saved'
       @events = Event.all.select(:id, :name, :description, :location, :datetime, :user_id)
       render json: @events
     else
