@@ -24,4 +24,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    # user = User.update(params[:user_id], location: params[:location])
+    @user = User.find(params[:id])
+    puts @user.inspect
+   @user.update_attributes({location: params[:location], password: params[:password]})
+   puts @user.errors.full_messages.inspect
+    # if @user.update_attributes({location: params[:location]})
+    #   puts "updated"
+    #   render json: {location: @user.location}
+    # else
+    #   render json: false
+    # end
+    render json: {location: @user.location}
+  end
+
 end
