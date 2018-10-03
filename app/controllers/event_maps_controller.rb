@@ -20,8 +20,11 @@ class EventMapsController < ApplicationController
       }
     end
 
+    if @resultsArray
+      render json: @resultsArray
+    end
 
-    render json: @resultsArray
+
 
   end
 
