@@ -5,6 +5,16 @@ class BlogsController < ApplicationController
     render json: blogs
   end
 
+  def destroy
+    @blog = Blog.find(params[:id])
+    if @blog.destroy
+      @blogs = Blog.select(:id, :title, :content, :created_at, :user_id).where("user_id = " + params[:user_id].to_s)
+      render json: @blogs
+    else
+      render json: false
+    end
+  end
+
   def index
     blogs = Blog.select(:id, :title, :content, :created_at, :user_id).where("user_id = " + params[:user_id].to_s)
     render json: blogs
