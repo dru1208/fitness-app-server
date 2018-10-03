@@ -11,6 +11,7 @@ class ApplicationController < ActionController::API
   end
 
   def self.decode_jwt (jwt)
+    puts jwt
     hmac_secret = ENV['JWT_HMAC_SECRET_KEY']
     decoded_token = JWT.decode jwt, hmac_secret, true, { algorithm: 'HS256' }
   end

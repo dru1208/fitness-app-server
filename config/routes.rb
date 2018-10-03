@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
     post '/register', to: 'users#create'
 
+    resources :users, only: [:update]
+
     resources :exercise_sessions, only: [:create, :index]
 
     resources :fitness_goals, only: [:create, :destroy, :index, :update]

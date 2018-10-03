@@ -28,7 +28,7 @@ class DashboardNutritionsController < ApplicationController
       puts "nutrition summary: " + nutritionSummary.inspect
       render json: nutritionSummary
     else
-      render json: []
+      render json: false
     end
   end
 end

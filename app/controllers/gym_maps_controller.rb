@@ -23,7 +23,7 @@ class GymMapsController < ApplicationController
 
 
     @client = GooglePlaces::Client.new(ENV['GOOGLE_PLACES_API_TOKEN'])
-    maps = @client.spots(centerLat.to_f, centerLng.to_f, :types => ['gym', 'health'], :exclude => 'store')
+    maps = @client.spots(centerLat.to_f, centerLng.to_f, :types => ['gym', 'health'], :exclude => ['store','school'])
 
 
     render json: {

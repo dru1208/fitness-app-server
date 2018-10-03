@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20180921192057) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.string "link"
+    t.datetime "datetime"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 20180921192057) do
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.text "content"
+    t.datetime "datetime"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -89,6 +91,7 @@ ActiveRecord::Schema.define(version: 20180921192057) do
     t.string "location"
     t.string "email"
     t.string "password_digest"
+    t.string "profile_picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

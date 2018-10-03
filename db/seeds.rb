@@ -38,7 +38,8 @@ user2 = User.create!({
   email: 'chrislo.7@live.com',
   password: 'chrislo',
   password_confirmation: 'chrislo',
-  location: '46 Spadina Ave, Toronto'
+  location: '46 Spadina Ave, Toronto',
+  profile_picture: 'http://localhost:3000/images/profile-pictures/happy-face.jpg'
 })
 
 
