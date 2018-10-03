@@ -1,7 +1,7 @@
 class FeedsController < ApplicationController
    def index
-    articles = Article.all.select(:id, :title, :link, :created_at)
-    blogs = Blog.all.select(:id, :title, :content, :created_at)
+    articles = Article.joins(:user).select("articles.id, articles.title, articles.link, articles.created_at, users.first_name, users.profile_picture")
+    blogs = Blog.joins(:user).select("blogs.id, blogs.title, blogs.content, blogs.created_at, users.first_name, users.profile_picture")
     feeds = articles + blogs
     render json: feeds
   end

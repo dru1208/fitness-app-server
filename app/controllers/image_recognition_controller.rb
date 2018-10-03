@@ -17,11 +17,11 @@ class ImageRecognitionController < ApplicationController
       iam_apikey: ENV['WATSON_API_KEY']
     )
 
-    f = File.new('./public/images/' + imageName, 'wb')
+    f = File.new('./public/images/food/' + imageName, 'wb')
     f.write(Base64.decode64(image))
     f.close
 
-    File.open('./public/images/' + imageName) do |image_file|
+    File.open('./public/images/food/' + imageName) do |image_file|
       foodResult = visual_recognition.classify(
         images_file: image_file,
         threshold: 0.1

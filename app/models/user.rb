@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   has_many :fitness_goals
   has_many :blogs
+  has_many :articles
   has_many :user_nutritions
   has_many :events
 
