@@ -6,10 +6,13 @@ class UsersController < ApplicationController
   def create
     image = params[:image]
     imageName = params[:imageName]
-    imageUrl = 'http://localhost:3000/images/profile-pictures/' + imageName
-    f = File.new('./public/images/profile-pictures/' + imageName, 'wb')
-    f.write(Base64.decode64(image))
-    f.close
+    imageURL = nil
+    if image
+      imageUrl = 'http://localhost:3000/images/profile-pictures/' + imageName
+      f = File.new('./public/images/profile-pictures/' + imageName, 'wb')
+      f.write(Base64.decode64(image))
+      f.close
+    end
 
     @user = User.new(first_name: params[:firstName],
       last_name: params[:lastName],
