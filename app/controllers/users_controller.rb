@@ -41,15 +41,22 @@ class UsersController < ApplicationController
     # user = User.update(params[:user_id], location: params[:location])
     @user = User.find(params[:id])
     puts @user.inspect
-   @user.update_attributes({location: params[:location], password: params[:password]})
-   puts @user.errors.full_messages.inspect
-    # if @user.update_attributes({location: params[:location]})
-    #   puts "updated"
-    #   render json: {location: @user.location}
-    # else
-    #   render json: false
-    # end
-    render json: {location: @user.location}
+    if @user.update_attributes({location: params[:location], password: params[:password]})
+      puts @user.errors.full_messages.inspect
+
+      payload = {
+        firstName: @user[:first_name],
+        userID: @user[:id],
+        email: @user[:email],
+        location: @user[:location]
+      }
+
+      jwt = UsersController.generate_jwt(payload)
+
+      render json: jwt
+    else
+      render json: false
+    end
   end
 
 end
