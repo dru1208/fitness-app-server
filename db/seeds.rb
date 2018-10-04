@@ -62,6 +62,14 @@ user4 = User.create!({
   location: 'kensington market, toronto'
 })
 
+user5 = User.create!({
+  first_name: 'john',
+  last_name: 'smith',
+  email: 'john@gmail.com',
+  password: 'john',
+  password_confirmation: 'john',
+  location: '46 Spadina Ave, Toronto'
+})
 
 puts "Generating some content articles..."
 
@@ -83,10 +91,28 @@ article3 = Article.create!({
   user_id: 2
 })
 
-articl4 = Article.create!({
+article4 = Article.create!({
   title: "Is big better? A comprehensive guide towards a bigger you",
   link: "www.example.com",
   user_id: 4
+})
+
+article5 = Article.create!({
+  title: 'generic search site for all of your gains',
+  link: 'www.google.com',
+  user_id: 5
+})
+
+article6 = Article.create!({
+  title: 'knockoff of this app',
+  link: 'www.myfitnesspal.com',
+  user_id: 5
+})
+
+article7 = Article.create!({
+  title: 'PPL bible',
+  link: 'https://www.muscleforlife.com/push-pull-legs/',
+  user_id: 5
 })
 
 
@@ -114,6 +140,36 @@ blog4 = Blog.create!({
   title: "Popeyes Daily Specials to diet on a budget",
   content: "When you eat popeyes daily specials you can grab a meal for less than 6$ and achieve a relatively healthy diet if you eat it mid-workout. This is done through the 100 percent scientifically proven research of Sean and Chris. Experiment shows that subjects who eat popeyes mid-workout can make at least 60.32 percent more muscle than subjects who don't eat Popeyes mid-workout. ",
   user_id: 4
+})
+
+blog5 = Blog.create!({
+  title: "starting out my journey",
+  content: "this website has really helped me along my path towards swoleness and healthy dietary habits, i struggled so much with controlling my portion size until yourfitnesspal, now this app is my best pal",
+  user_id: 5
+})
+
+blog6 = Blog.create!({
+  title: "hello!",
+  content: "hi john! just wanted to say welcome and good luck with your gains",
+  user_id: 3
+})
+
+blog7 = Blog.create!({
+  title: "injured",
+  content: "hey everybody, what are your go-tos for dealing with muscle sprains? might have hurt myself playing soccer the other day",
+  user_id: 2
+})
+
+blog8 = Blog.create!({
+  title: "protein supplements",
+  content: "searching for the best protein, i'm not sure what to go for, any advice appreciated",
+  user_id: 5
+})
+
+blog9 = Blog.create!({
+  title: "hit a new PB!",
+  content: "finally benching 225, i feel like i've really made progress in the last week, super stoked to keep going on",
+  user_id: 5
 })
 
 puts "Generating some events..."
