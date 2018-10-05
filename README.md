@@ -1,24 +1,8 @@
-# README
+# YourFitnessPal Rails API Server
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+This repository contains the server and database code for the YourFitnessPal Rails API backend, with a PSQL database.
 
-Things you may want to cover:
+Link to frontend repo and further information:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://github.com/dru1208/fitness-app
